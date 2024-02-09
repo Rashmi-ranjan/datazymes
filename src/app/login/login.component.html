@@ -1,0 +1,17 @@
+<form [formGroup]="loginForm" (submit)="submitLoginiForm()">
+    <div class="row col-md-12">
+        <div class="col-md-6">
+            <label>Username</label> : <input type="text" class="form-control" formControlName="username" placeholder="Enter Username">
+            <div class="error" *ngIf="isSubmit && loginForm.get('username').hasError('required') && loginForm.get('username').invalid">
+                username should not blank
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label>Password</label> : <input type="password" class="form-control" formControlName="password" placeholder="Enter Password">
+            <div class="error" *ngIf="isSubmit && loginForm.get('username').hasError('required') && loginForm.get('password').invalid">
+                password should not blank
+            </div>
+        </div>
+        <button type="submit" class="btn ">login</button>
+    </div>
+</form>
